@@ -8,9 +8,20 @@
         ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <ui:SimpleStackPanel Margin="12" Spacing="24">
-        <TextBlock Text="My first ModernWPF app" Style="{StaticResource HeaderTextBlockStyle}" />
-        <Button Content="I am a button" />
-        <Button Content="I am an accent button" Style="{StaticResource AccentButtonStyle}" />
-    </ui:SimpleStackPanel>
+    <ui:NavigationView PaneTitle="Settings"
+                   IsBackButtonVisible="Collapsed"
+                   IsSettingsVisible="True">
+        <ui:NavigationView.MenuItems>
+            <ui:NavigationViewItem Icon="Home" Content="Home" />
+            <ui:NavigationViewItem Icon="Folder" Content="Projects" />
+            <ui:NavigationViewItem>
+                <ui:NavigationViewItem.Icon>
+                    <ui:SymbolIcon Symbol="Font"/>
+                </ui:NavigationViewItem.Icon>
+                Fonts
+            </ui:NavigationViewItem>
+        </ui:NavigationView.MenuItems>
+
+        <Frame x:Name="ContentFrame" />
+    </ui:NavigationView>
 </Window>
