@@ -10,11 +10,12 @@
         Title="MainWindow" Height="450" Width="800">
     <ui:NavigationView PaneTitle="Settings"
                    IsBackButtonVisible="Collapsed"
-                   IsSettingsVisible="True">
+                   IsSettingsVisible="True"
+                       ItemInvoked="NavView_ItemInvoked">
         <ui:NavigationView.MenuItems>
-            <ui:NavigationViewItem Icon="Home" Content="Home" />
-            <ui:NavigationViewItem Icon="Folder" Content="Projects" />
-            <ui:NavigationViewItem>
+            <ui:NavigationViewItem Icon="Home" Content="Home" Tag="home" />
+            <ui:NavigationViewItem Icon="Folder" Content="Projects" Tag="projects" />
+            <ui:NavigationViewItem Tag="about">
                 <ui:NavigationViewItem.Icon>
                     <ui:SymbolIcon Symbol="Font"/>
                 </ui:NavigationViewItem.Icon>
